@@ -1,0 +1,5 @@
+run 100 imp2D gossip 0
+sbt
+run 100 imp2D gossip -
+run "100 imp2D gossip 0.01"
+run 100 imp2D gossip 0.01

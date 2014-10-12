@@ -1,0 +1,17 @@
+#!/bin/bash
+for numNodes in 10000
+do
+	for topology in 2D imp2D line
+	do
+		for prob in 0.0001 0.001 0.01 0.1
+		do
+			for i in 1 2 3 4 5 
+			do
+			echo $numNodes
+			echo $topology
+			sbt "run $numNodes $topology gossip $prob"
+			tail -n 1 test.txt >> $numNodes$topology.txt
+			done
+		done
+	done
+done
